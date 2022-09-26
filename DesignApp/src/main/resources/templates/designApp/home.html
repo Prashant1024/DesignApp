@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- CSS Files -->
+	<link href="/css/cdn/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+	<!-- JS Files -->
+	<script src="/js/cdn/slim.min.js"></script>
+	<script src="/js/cdn/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script src="/js/cdn/popper.min.js"></script>
+	<script src="/js/cdn/jquery.min.js"></script>
+	<script src="/js/cdn/moment.min.js"></script>
+	
+	
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+	});				//END OF READY FUNCTION
+
+</script>
+
+<style>
+	body{
+		overflow-x:hidden;
+	}
+	
+	.mainImg{
+		height:83vh;
+		width:100%;
+		overflow: hidden;
+  		position: relative;
+	}
+	
+	img{
+		object-fit:cover; 
+		height:100%;
+		width:100%;
+	}
+	
+	.topHeading{
+		position: absolute;
+		top:25%;
+		left: 50px;
+		font-size:10vh;
+		color:#fff;
+		font-family:Cambria;
+	}
+	
+	.topHeadingContent{
+		position: absolute;
+		top:45%;
+		left: 50px;
+		font-size:2vh;
+		color:#fff;
+		font-family:Helvetica;
+	}
+
+	
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<!-- <div th:insert="loadScreen :: loaderFragment"></div> -->
+		
+		<div class="container-fluid">
+			<div th:replace="/navbar::navigationBar"></div>
+			
+			
+			<!-- Home page image -->
+			<div class="row">
+				<div class="col-12 mainImg" style="margin-left:0px;">
+					<img src="/img/mainBackground.jpg" style="filter: brightness(45%);">
+					<div class="topHeading mb-1">
+						<span>Interiors</span>
+					</div>
+					<div class="topHeadingContent">
+						<span>One Stop Solution for Interior Designing</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
