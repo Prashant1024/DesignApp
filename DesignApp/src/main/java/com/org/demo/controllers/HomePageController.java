@@ -16,4 +16,9 @@ public class HomePageController {
 	public String errorPage() {
 		return "error";
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/contactUs")
+	public String contactUsPage() {
+		return "/designApp/contact";
+	}
 }
