@@ -18,6 +18,13 @@
 <title>Home Page</title>
 
 <script type="text/javascript">
+
+	//Show loading screen when page loads
+	$(window).on('load', function(){
+		$('#loader-icon').hide();
+	});
+	
+	
 	$(document).ready(function(){
 		
 	});				//END OF READY FUNCTION
@@ -195,7 +202,7 @@
 		
 		<div class="container-fluid">
 			<div th:replace="/navbar::navigationBar"></div>
-			
+			<div th:replace="/loadScreen::loaderFragment"></div>
 			
 			<!-- Home page image -->
 			<div class="row mb-5">
