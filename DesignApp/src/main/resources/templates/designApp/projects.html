@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- CSS Files -->
+	<link href="/css/cdn/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+	<!-- JS Files -->
+	<script src="/js/cdn/slim.min.js"></script>
+	<script src="/js/cdn/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script src="/js/cdn/popper.min.js"></script>
+	<script src="/js/cdn/jquery.min.js"></script>
+	<script src="/js/cdn/moment.min.js"></script>
+	
+	
+<title>Projects</title>
+
+<script type="text/javascript">
+
+	//Show loading screen when page loads
+	$(window).on('load', function(){
+		$('#loader-icon').hide();
+	});
+	
+	
+	$(document).ready(function(){
+		$("#home").children().removeClass('active');
+		$("#aboutUs").children().removeClass('active');
+		$("#projects").children().removeClass('active');
+		$("#services").children().removeClass('active');
+		$("#projects").children().addClass('active');
+	});				//END OF READY FUNCTION
+
+</script>
+
+<style>
+	body{
+		overflow-x:hidden;
+	}
+	
+	@media (min-width: 550px) {
+	  .flexboxContainer {
+	  	align-items:center;
+	    justify-content:center;
+	  	display:flex;
+	    flex-direction: row;
+	  }
+	  .cards {
+	    flex-direction: row;
+	    background-color:#fff;
+		width:30%;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+		border-radius:10px;
+		margin:0px 10px 10px 10px;
+	  }
+	  
+	  #logoText{
+	  	display:none;	
+	  }
+	    
+	  #logoImage{
+	  	display:inline-block;
+	  }
+	}
+	
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="ISO-8859-1">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="container-fluid">
+			<div th:replace="/navbar::navigationBar"></div>
+			<div th:replace="/loadScreen::loaderFragment"></div>
+			
+			
+		</div>
+	</div>
+</body>
+</html>

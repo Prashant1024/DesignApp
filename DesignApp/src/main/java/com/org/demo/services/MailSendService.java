@@ -24,12 +24,13 @@ public class MailSendService {
 		
 		JSONObject params = new JSONObject(jsonString);
 		
-		String fromMailId = params.optString("email");
-		String toMailId = MailUtil.toEmail;
+		String toMailId = params.optString("email");
+		String fromMailId = MailUtil.toEmail;
 		String message = params.optString("message");
 		String subject = MailUtil.emailSubject;
 		String name = params.optString("name");
-		String content = "Hi, This mail is from "+name+" .";
+		String content = "Hi, Thank you for showing interest. Our Designer will be in touch with you shortly. "+
+				 "In the meantime, you can checkout the services provided by us below.";
 		content += message;
 		
 		MimeMessage mimeMessage = javaMailSender.createMimeMessage();

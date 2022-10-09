@@ -53,14 +53,15 @@
 		position: absolute;
 		top:25%;
 		left: 50px;
-		font-size:10vh;
+		height:35vh;
 		color:#fff;
 		font-family:Cambria;
+		font-size:6rem;
 	}
 	
 	.topHeadingContent{
 		position: absolute;
-		top:45%;
+		top:65%;
 		left: 50px;
 		font-size:2vh;
 		color:#fff;
@@ -174,6 +175,14 @@
 	    justify-content:center;
 	}
 	
+	#logoText{
+  		display:inline-block;	
+  	}
+    
+  	#logoImage{
+  		display:none;
+  	}
+	
 	@media (min-width: 550px) {
 	  .flexboxContainer {
 	  	align-items:center;
@@ -188,6 +197,14 @@
 		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 		border-radius:10px;
 		margin:0px 10px 10px 10px;
+	  }
+	  
+	  #logoText{
+	  	display:none;	
+	  }
+	    
+	  #logoImage{
+	  	display:inline-block;
 	  }
 	}
 	
@@ -208,8 +225,11 @@
 			<div class="row mb-5">
 				<div class="col-12 mainImg" style="margin-left:0px;">
 					<img class="mainImage" src="/img/mainBackground.jpg" style="filter: brightness(45%);">
-					<div class="topHeading mb-1">
-						<span>Interiors</span>
+					<div class="topHeading imgContainer mb-1" id="logoImage">
+						<img src="/img/logo.png">
+					</div>
+					<div class="topHeading mb-1" id="logoText">
+						<span>Aren Studio</span>
 					</div>
 					<div class="topHeadingContent">
 						<span>One Stop Solution for Interior Designing.</span>
@@ -318,7 +338,7 @@
 
 				</div>
 				<div class="text-center">
-					<a href="#" class="anchorOption"><span style="color:#FFC54D; font-family:Verdana;">SEE HOW IT WORKS</span>&nbsp;&nbsp; &nbsp;<span style="color:#FFC54D;"><i class="arrow right"></i></span></a>					
+					<a th:href="@{/working}" class="anchorOption"><span style="color:#FFC54D; font-family:Verdana;">SEE HOW IT WORKS</span>&nbsp;&nbsp; &nbsp;<span style="color:#FFC54D;"><i class="arrow right"></i></span></a>					
 				</div>
 			</div>
 
@@ -365,7 +385,9 @@
 						<span>READY TO DESIGN YOUR HOME ?</span>
 					</div>
 					<div class="mb-1 contactDesigner">
-						<div><button class="btn btn-primary">Talk to a designer</button></div>		
+						<div>
+							<a th:href="@{/contactUs}"><button class="btn btn-primary">Talk to a designer</button></a>
+						</div>	
 					</div>
 				</div>
 			</div>
