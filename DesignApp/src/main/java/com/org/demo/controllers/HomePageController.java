@@ -9,7 +9,7 @@ public class HomePageController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/")
 	public String homePage() {
-		return "/designApp/home";
+		return "home";
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/error")
@@ -19,27 +19,27 @@ public class HomePageController {
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/contactUs")
 	public String contactUsPage() {
-		return "/designApp/contact";
+		return "contact";
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/services")
 	public String servicePage() {
-		return "/designApp/services";
+		return "services";
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/working")
 	public String workingPage() {
-		return "/designApp/working";
+		return "working";
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/aboutUs")
 	public String aboutUsPage() {
-		return "/designApp/aboutUs";
+		return "aboutUs";
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/projects")
 	public String projectsPage() {
-		return "/designApp/projects";
+		return "projects";
 	}
 
 }
