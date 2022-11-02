@@ -31,6 +31,11 @@
 		$("#projects").children().removeClass('active');
 		$("#services").children().removeClass('active');
 		$("#projects").children().addClass('active');
+		
+		$(document).on('click','.clickableProject', function(){
+			let value = $(this).attr('value');
+			
+		})
 	});				//END OF READY FUNCTION
 
 </script>
@@ -40,13 +45,100 @@
 		overflow-x:hidden;
 	}
 	
+	.mainImg {
+		height: 50vh;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+	
+	.mainImage {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+	
+	.nav-tabs{
+		background-color:#000000;
+	}
+	
+	.flexboxContainer {
+	  	align-items:center;
+	  	display:flex;
+	  	justify-content:center;
+	    flex-direction: column;
+	    background-color:#1e1f22;
+	    height:100%;
+	  }
+	
+		  
+	  .topHeading {
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		font-size: 10vh;
+		color: #fff;
+		font-family: Helvetica;
+	}
+	
+	.clickableProject{
+		height:300px;
+		width:300px;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+		margin:25px 0px 25px 0px;
+	}
+	
+	.projectImg{
+		height:90%;
+		width:100%;
+		border-radius:4px;	
+		margin-bottom: 10px;
+	}
+	
+	.content{
+		font-size:1rem;
+		margin-top:5px;
+		align-items:center;
+		text-align:center;
+		font-family: Open Sans,Helvetica,Arial,sans-serif;
+		color:#ffcf00;
+		align-items:center;
+		font-weight:bold;
+	}
+	
 	@media (min-width: 550px) {
 	  .flexboxContainer {
 	  	align-items:center;
 	    justify-content:center;
 	  	display:flex;
 	    flex-direction: row;
+	    background-color:#1e1f22;
+	    height:50vh;
 	  }
+	  
+	  .clickableProject{
+		width:260px;
+		height:260px;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+		margin-left:35px;
+		transition: all 1s ease;
+	}
+	
+	.clickableProject:hover{
+		width:260px;
+		height:260px;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+		margin-left:35px;
+		transform: scale(1.08); 
+		-transform-origin: 50% 50%;
+    	filter: blur(0px);
+    	filter: brightness(70%);
+    	cursor:pointer;
+	}
+	
 	  .cards {
 	    flex-direction: row;
 	    background-color:#fff;
@@ -77,6 +169,53 @@
 			<div th:replace="navbar::navigationBar"></div>
 			<div th:replace="loadScreen::loaderFragment"></div>
 			
+			<!-- Main image -->
+			<div class="row">
+				<div class="col-12 mainImg" style="margin-left: 0px;">
+					<img class="mainImage" src="/img/projects.jpg"
+						style="filter: brightness(45%);">
+					<div class="topHeading mb-1">
+						<span>Projects</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-12 flexboxContainer">
+					<a th:href="@{/viewProjects?value=kitchen}">
+						<div class="clickableProject" value="kitchen">
+							<img class="projectImg" src="/img/kitchen_img.jpg">
+							<div class="content">
+								<span>KITCHEN</span>
+							</div>
+						</div>
+					</a>
+					<a th:href="@{/viewProjects?value=living_room}">
+						<div class="clickableProject" value="living_room">
+							<img class="projectImg" src="/img/living_room_img.jpg">
+							<div class="content">
+								<span>LIVING ROOM</span>
+							</div>
+						</div>
+					</a>
+					<a th:href="@{/viewProjects?value=tv_unit}">
+						<div class="clickableProject" value="tv_unit">
+							<img class="projectImg" src="/img/tv_unit_img.jpg">
+							<div class="content">
+								<span>TV UNIT</span>
+							</div>
+						</div>
+					</a>
+					<a th:href="@{/viewProjects?value=wardrobe}">
+						<div class="clickableProject" value="wardrobe">
+							<img class="projectImg" src="/img/wardrobe_img.jpg">
+							<div class="content">
+								<span>WARDROBE</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
 			
 		</div>
 	</div>
