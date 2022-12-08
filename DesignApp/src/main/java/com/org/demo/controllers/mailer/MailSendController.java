@@ -1,5 +1,7 @@
 package com.org.demo.controllers.mailer;
 
+import java.io.UnsupportedEncodingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +19,7 @@ public class MailSendController {
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/sendMessage")
 	@ResponseBody
-	public String sendMail(@RequestParam("jsonMsg") String jsonString) {
+	public String sendMail(@RequestParam("jsonMsg") String jsonString) throws UnsupportedEncodingException {
 		
 		
 		String returnRes = "";

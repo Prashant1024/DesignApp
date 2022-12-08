@@ -40,6 +40,7 @@
 			let name = $("#name").val();
 			let email = $("#email").val();
 			let message = $("#message").val();
+			let phone = $("#phone").val();
 			
 			if(name === ''){
 				alert("Please Enter your name");
@@ -49,11 +50,16 @@
 				alert("Please Enter your Email");
 				return;
 			}
+			if(phone === ''){
+				alert("Please Enter your Phone number");
+				return;
+			}
 			
 			let jsonObj = new Object();
 			jsonObj["name"] = name;
 			jsonObj["email"] = email;
 			jsonObj["message"] = message;
+			jsonObj["phone"] = phone;
 					
 			let jsonInString = JSON.stringify(jsonObj);
 			
@@ -72,10 +78,10 @@
 				success : function(result){
 					
 					if(result === '1'){
-						alert("Sent Successfully !!");
+						alert("Mail Sent Successfully !!");
 					}
 					else{
-						alert("Sent was not Successful. Please check your Email ID !!");
+						alert("Mail was not sent. Please check your Email ID !!");
 					}
 					
 				}
@@ -114,11 +120,12 @@ body {
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	font-size: 10vh;
-	color: #fff;
+	color: #FFC54D;
 	font-family: Helvetica;
 }
 
 .flexBoxContainer {
+	height:100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -140,7 +147,7 @@ body {
 .contact-info-container {
 	display: flex;
 	flex-direction: column;
-	background-color: #fff;
+	background-color: #323336;
 }
 
 .adressContainer {
@@ -152,7 +159,7 @@ body {
 .addressHead {
 	text-align:top;
 	font-size: 1.8rem;
-	color: #fff;
+	color: #FFC54D;
 	margin-bottom: 50px;
 }
 
@@ -178,6 +185,7 @@ a:hover{
 
 @media (min-width : 550px) {
 	.flexBoxContainer {
+		height:100%;
 		align-items: center;
 		justify-content: center;
 		display: flex;
@@ -222,10 +230,6 @@ a:hover{
 					</div>
 					<div class="adressBody">
 						<div class="mb-3">
-							<span class="me-2"><i class="fa fa-phone contactIcon" aria-hidden="true"></i></span>
-							<span>Phone : XXXXYYYYZZ</span>
-						</div>
-						<div class="mb-3">
 							<span class="me-2"><i class="fa fa-envelope-o contactIcon" aria-hidden="true"></i></span>
 							<span>Email : sales@arenstudio.in</span>
 						</div>
@@ -241,6 +245,10 @@ a:hover{
 								<span>+91-9033800313</span>
 							</a>
 						</div>
+						<div class="mb-3">
+							<span class="me-2"><i class="fa fa-map-marker  contactIcon" aria-hidden="true"></i></span>
+							<span>Hyderabad | Bengaluru</span>
+						</div>
 					</div>
 				</div>
 				<div class="col m-1">
@@ -255,6 +263,11 @@ a:hover{
 								<label for="email" class="form-label">Email address</label> <input
 									type="email" class="form-control" id="email"
 									placeholder="name@example.com">
+							</div>
+							<div class="mb-2">
+								<label for="phone" class="form-label">Phone</label> <input
+									type="text" class="form-control" id="phone"
+									placeholder="Enter Phone No.">
 							</div>
 							<div class="mb-3">
 								<label for="message" class="form-label">Message</label>
